@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import { Home } from './pages'
+import { Routers } from './routers'
+import Menu from './components/menu'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="root-wrap">
+      <Menu age={11} name={'test公司'} />
+      <Switch>
+        {
+          Routers.map(router => (
+            <Route
+              exact={!router.notExect}
+              key={router.path}
+              path={router.path}
+              component={router.component}
+            >
+            </Route>
+          ))
+        }
+        {/* 设置默认路由 推荐方法一*/}
+        {/* 方法一 */}
+        <Route path="/" component={Home} exact></Route>
+        {/* 方法二 重定向*/}
+        {/* <Redirect path="/" to="/home" /> */}
+      </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default withRouter(App)
