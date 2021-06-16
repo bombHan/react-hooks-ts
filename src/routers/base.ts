@@ -1,7 +1,8 @@
-import { Test } from '../pages'
+import { Test, Login } from '../pages'
 
 export const baseUrl = {
-    test: '/test'
+    test: '/test',
+    login: '/login'
 }
 
 const baseRouter = [
@@ -10,6 +11,12 @@ const baseRouter = [
         component: Test,
         root: [],
         name: 'Test'
+    },
+    {
+        path: baseUrl.login,
+        component: Login,
+        root: [],
+        name: 'Login'
     }
 ]
 

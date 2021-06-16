@@ -1,13 +1,19 @@
 import React from 'react'
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, withRouter, useHistory } from 'react-router-dom'
 import { Home } from './pages'
 import { Routers } from './routers'
 import Menu from './components/menu'
 
 const App = () => {
+  let history = useHistory();
+
   return (
     <div className="root-wrap">
-      <Menu age={11} name={'test公司'} />
+      {
+        history.location.pathname !== '/login'
+          ? <Menu age={11} name={'test公司'} />
+          : null
+      }
       <Switch>
         {
           Routers.map(router => (
