@@ -11,7 +11,7 @@ const App = () => {
     <div className="root-wrap">
       {
         history.location.pathname !== '/login'
-          ? <Menu age={11} name={'test公司'} />
+          ? <Menu inviteCode={11} name={'test公司'} />
           : null
       }
       <Switch>
