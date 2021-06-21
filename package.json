@@ -2,6 +2,7 @@
   "name": "hook-ts-demo",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://www.cnblogs.com/",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@babel/core": "7.12.3",
@@ -17,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "antd": "^4.16.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
